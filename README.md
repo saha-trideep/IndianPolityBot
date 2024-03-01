@@ -27,6 +27,7 @@ This chatbot leverages language models and retrieval mechanisms to provide infor
 - `langchain/`: Directory for language chain related modules.
 - `requirements.txt`: List of project dependencies.
 
+
 ## Dependencies
 
 - Streamlit
@@ -43,5 +44,5 @@ This chatbot leverages language models and retrieval mechanisms to provide infor
 - [Hugging Face](https://huggingface.co/)
 - [Langchain](https://github.com/mistralai/langchain)
 
-https://github.com/saha-trideep/IndianPolityBot/assets/115859105/a03d14bd-4d11-40a3-acc9-ad0d07598a13
+https://github.com/saha-trideep/IndianPolityBot/assets/115859105/de1bc0d6-6b4a-4fe0-9299-f7707da64d41
 
