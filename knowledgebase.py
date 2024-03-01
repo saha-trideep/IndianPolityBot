@@ -1,4 +1,5 @@
 import PyPDF2
+import sentence_transformers
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_community.embeddings import HuggingFaceEmbeddings
 from langchain_community.vectorstores.chroma import Chroma
