@@ -1,9 +1,7 @@
 import PyPDF2
 
 from langchain.text_splitter import RecursiveCharacterTextSplitter
-from langchain_community.embeddings.sentence_transformer import (
-    SentenceTransformerEmbeddings
-)
+from langchain_community.embeddings import HuggingFaceEmbeddings
 from langchain_community.vectorstores.chroma import Chroma
 
 
@@ -32,7 +30,7 @@ def split_text(text):
 
 
 def embedding(chunks):
-    embeddings = SentenceTransformerEmbeddings(model_name="all-MiniLM-L6-v2")
+    embeddings = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
     Chroma.from_texts(chunks, embeddings,persist_directory="./ chroma", metadatas=[{"source": f"{i}-pl"} for i in range(len(chunks))])
     
 
