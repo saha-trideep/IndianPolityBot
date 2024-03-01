@@ -4,7 +4,9 @@ import streamlit as st
 from dotenv import load_dotenv
 from langchain.vectorstores.chroma import Chroma
 
-from langchain_community.embeddings import HuggingFaceEmbeddings
+from langchain_community.embeddings.sentence_transformer import (
+    SentenceTransformerEmbeddings
+)
 from langchain_community.llms import HuggingFaceEndpoint
 from langchain.chains import RetrievalQA
 from langchain.schema import retriever
@@ -19,7 +21,7 @@ load_dotenv()
 HUGGINGFACEHUB_API_TOKEN = os.getenv("HUGGINGFACEHUB_API_TOKEN") 
 
 # Set up Chroma
-embedding = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
+embedding = SentenceTransformerEmbeddings(model_name="all-MiniLM-L6-v2")
 db = Chroma(persist_directory="./chroma", embedding_function=embedding)
 
 # Set up LLM
