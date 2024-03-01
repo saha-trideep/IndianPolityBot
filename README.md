@@ -3,6 +3,7 @@
 Welcome to the Indian Polity Chatbot, a Streamlit app based on 'Indian Polity by M Laxmikant' PDF, designed for UPSC exam preparation.
 
 ## Overview
+https://github.com/saha-trideep/IndianPolityBot/assets/115859105/de1bc0d6-6b4a-4fe0-9299-f7707da64d41
 
 This chatbot leverages language models and retrieval mechanisms to provide information and answer questions related to Indian Polity. It uses Streamlit for the user interface and integrates with Hugging Face for language models.
 
@@ -44,5 +45,5 @@ This chatbot leverages language models and retrieval mechanisms to provide infor
 - [Hugging Face](https://huggingface.co/)
 - [Langchain](https://github.com/mistralai/langchain)
 
-https://github.com/saha-trideep/IndianPolityBot/assets/115859105/de1bc0d6-6b4a-4fe0-9299-f7707da64d41
+
 
