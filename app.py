@@ -1,3 +1,8 @@
+__import__('pysqlite3')
+import sys
+sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
+
+
 import os
 import time
 import streamlit as st
@@ -15,9 +20,7 @@ from langchain.memory import ConversationBufferWindowMemory
 from chromadb.config import Settings
 client = chromadb.PersistentClient(path="./chroma", settings=Settings(allow_reset=False))
 
-__import__('pysqlite3')
-import sys
-sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
+
 
 
 # Load environment variables
