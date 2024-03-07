@@ -19,7 +19,7 @@ load_dotenv()
 HUGGINGFACEHUB_API_TOKEN = os.getenv("HUGGINGFACEHUB_API_TOKEN") 
 
 # Set up Chroma
-embedding = HuggingFaceEmbeddings()
+embedding = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
 db = Chroma(persist_directory="./chroma", embedding_function=embedding)
 
 # Set up LLM
@@ -96,7 +96,7 @@ if query := st.chat_input("Ask me about Constitution of India"):
 
         with st.chat_message("assistant", avatar=assistant_logo):
             message_placeholder = st.empty()
-            # Send user's question to our chain
+            
 
             # Send user's question to our chain
             result = chain.invoke(query)
