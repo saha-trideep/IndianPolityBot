@@ -33,8 +33,8 @@ HUGGINGFACEHUB_API_TOKEN = st.secrets["HUGGINGFACEHUB_API_TOKEN"]
 
 embed_model = SentenceTransformer("all-MiniLM-L6-v2")
 # Set up Chroma
-# embedding = HuggingFaceEmbeddings(model_name=embed_model)
-db = Chroma(persist_directory="./chroma", embedding_function=embed_model, client=client)
+embedding = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
+db = Chroma(persist_directory="./chroma", embedding_function=embedding, client=client)
 
 # Set up LLM
 repo_id = "mistralai/Mixtral-8x7B-Instruct-v0.1"
