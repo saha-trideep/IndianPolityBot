@@ -1,6 +1,6 @@
 # Indian Polity Chatbot
 
-Welcome to the Indian Polity Chatbot, a Streamlit app based on 'Indian Polity by M Laxmikant' PDF, designed for UPSC exam preparation.
+Welcome to the Indian Polity Chatbot, a Streamlit app based on 'Indian Polity by M Laxmikant' PDF, designed for UPSC exam preparation. [Streamlit Cloud](https://saha-trideep-indianpolitybot-app-xxyur0.streamlit.app/)
 
 ## Overview
 https://github.com/saha-trideep/IndianPolityBot/assets/115859105/de1bc0d6-6b4a-4fe0-9299-f7707da64d41
