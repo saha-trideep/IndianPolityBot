@@ -1,6 +1,7 @@
 import os
 import time
 import streamlit as st
+import chromadb
 from dotenv import load_dotenv
 from langchain.vectorstores.chroma import Chroma
 from sentence_transformers import SentenceTransformer
