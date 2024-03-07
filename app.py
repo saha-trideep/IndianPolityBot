@@ -3,6 +3,7 @@ import time
 import streamlit as st
 from dotenv import load_dotenv
 from langchain.vectorstores.chroma import Chroma
+from sentence_transformers import SentenceTransformer
 
 from langchain_community.embeddings import HuggingFaceEmbeddings
 from langchain_community.llms import HuggingFaceEndpoint
@@ -18,8 +19,10 @@ load_dotenv()
 # Load HuggingFace API token
 #HUGGINGFACEHUB_API_TOKEN = os.getenv("HUGGINGFACEHUB_API_TOKEN") 
 HUGGINGFACEHUB_API_TOKEN = st.secrets["HUGGINGFACEHUB_API_TOKEN"]
+
+embed_model = SentenceTransformer("all-MiniLM-L6-v2")
 # Set up Chroma
-embedding = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
+embedding = HuggingFaceEmbeddings(model_name=embed_model)
 db = Chroma(persist_directory="./chroma", embedding_function=embedding)
 
 # Set up LLM
