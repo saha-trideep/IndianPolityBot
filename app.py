@@ -1,7 +1,7 @@
 import os
 import time
 import streamlit as st
-# import chromadb
+import chromadb
 from dotenv import load_dotenv
 from langchain.vectorstores.chroma import Chroma
 from sentence_transformers import SentenceTransformer
@@ -11,6 +11,9 @@ from langchain_community.llms import HuggingFaceEndpoint
 from langchain.chains import RetrievalQA
 from langchain.schema import retriever
 from langchain.memory import ConversationBufferWindowMemory
+
+from chromadb.config import Settings
+client = chromadb.PersistentClient(path="./chroma", settings=Settings(allow_reset=False))
 
 __import__('pysqlite3')
 import sys
@@ -28,7 +31,7 @@ HUGGINGFACEHUB_API_TOKEN = st.secrets["HUGGINGFACEHUB_API_TOKEN"]
 embed_model = SentenceTransformer("all-MiniLM-L6-v2")
 # Set up Chroma
 # embedding = HuggingFaceEmbeddings(model_name=embed_model)
-db = Chroma(persist_directory="./chroma", embedding_function=embed_model)
+db = Chroma(persist_directory="./chroma", embedding_function=embed_model, client=client, client_settings=Settings(allow_disk_persist=True))
 
 # Set up LLM
 repo_id = "mistralai/Mixtral-8x7B-Instruct-v0.1"
