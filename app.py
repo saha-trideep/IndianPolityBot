@@ -18,7 +18,7 @@ from langchain.schema import retriever
 from langchain.memory import ConversationBufferWindowMemory
 
 from chromadb.config import Settings
-client = chromadb.PersistentClient(path="./chroma", settings=Settings(allow_reset=False))
+client = chromadb.PersistentClient(path="./chroma")
 
 
 
